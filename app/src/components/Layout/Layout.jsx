@@ -10,6 +10,7 @@ export default function Layout() {
       <header>
         <nav
           style={{
+            backgroundColor: "white",
             width: "100%",
             display: "flex",
             gap: "20px",
@@ -27,7 +28,7 @@ export default function Layout() {
               src={hyfLogo}
               alt="HackYourFuture logo"
               className="logo"
-              width={200}
+              width={120}
               style={{ padding: "20px" }}
             />
           </a>

@@ -11,6 +11,7 @@
   justify-content: space-around;
   transition: scale;
   transition-duration: 300ms;
+  background-color: white;
 }
 
 .event-card:hover {
