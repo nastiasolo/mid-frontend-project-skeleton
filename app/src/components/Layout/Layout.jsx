@@ -6,7 +6,7 @@ export default function Layout() {
   const { user, logout } = useAuth();
 
   return (
-    <div>
+    <div className="layout-container">
       <header>
         <nav
           style={{
@@ -53,7 +53,9 @@ export default function Layout() {
         <Outlet />
       </main>
 
-      <footer>{/* Footer content goes here */}</footer>
+      <footer>
+        <p>2026 © Events Startup Project</p>
+      </footer>
     </div>
   );
 }
