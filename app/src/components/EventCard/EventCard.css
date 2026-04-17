@@ -1,17 +1,14 @@
 .event-card {
   display: flex;
   flex-direction: column;
-  font-family: Arial, Helvetica, sans-serif;
   padding: 12px;
-  border: 2px solid darkblue;
-  border-radius: 12px;
-  background-color: rgba(41, 58, 125, 0.2);
+  border: var(--border-standard);
+  border-radius: var(--radius-l);
   flex: 1;
-  gap: 16px;
+  gap: var(--gap-m);
   justify-content: space-around;
-  transition: scale;
-  transition-duration: 300ms;
-  background-color: white;
+  transition: scale var(--transition-speed);
+  background-color: var(--color-bg);
 }
 
 .event-card:hover {
@@ -19,13 +16,13 @@
 }
 
 .event-title {
-  color: rgb(41, 58, 125);
+  color: var(--color-accent);
 }
 
 .event-description {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--gap-s);
 }
 
 .event-emoji {
@@ -34,22 +31,21 @@
 
 .event-category,
 .event-tickets {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .event-buy-button {
   padding: 10px;
   font-size: 16px;
   background-color: transparent;
-  color: rgb(41, 58, 125);
-  border: 2px solid rgb(41, 58, 125);
-  border-radius: 10px;
+  color: var(--color-accent);
+  border: var(--border-standard);
+  border-radius: var(--radius-m);
   cursor: pointer;
-  transition: background-color;
-  transition-duration: 300ms;
-  font-weight: 700;
+  transition: background-color var(--transition-speed);
+  font-weight: var(--font-weight-bold);
 }
 
 .event-buy-button:hover {
-  background-color: rgba(41, 58, 125, 0.4);
+  background-color: var(--color-accent-hover);
 }

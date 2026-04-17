@@ -7,6 +7,15 @@ body,
   width: 100%;
 }
 
+.body {
+  background-image: url("./assets/background-img.avif");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: var(--font-main);
+}
+
 .layout-container {
   display: flex;
   flex-direction: column;

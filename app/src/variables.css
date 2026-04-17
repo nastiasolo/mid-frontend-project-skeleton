@@ -1,0 +1,20 @@
+:root {
+  --color-accent: rgb(41, 58, 125);
+  --color-accent-dark: darkblue;
+  --color-accent-soft: rgba(41, 58, 125, 0.2);
+  --color-accent-hover: rgba(41, 58, 125, 0.4);
+  --color-bg: white;
+
+  --border-standard: 2px solid darkblue;
+  --radius-l: 12px;
+  --radius-m: 10px;
+
+  --gap-s: 8px;
+  --gap-m: 16px;
+  --gap-l: 30px;
+
+  --transition-speed: 300ms;
+
+  --font-main: Arial, Helvetica, sans-serif;
+  --font-weight-bold: 700;
+}
