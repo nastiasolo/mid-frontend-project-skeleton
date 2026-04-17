@@ -8,6 +8,7 @@ function HomePage() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "white",
       }}
     >
       Welcome to the homepage!

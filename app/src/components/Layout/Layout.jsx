@@ -6,10 +6,11 @@ export default function Layout() {
   const { user, logout } = useAuth();
 
   return (
-    <div>
+    <div className="layout-container">
       <header>
         <nav
           style={{
+            backgroundColor: "white",
             width: "100%",
             display: "flex",
             gap: "20px",
@@ -27,7 +28,7 @@ export default function Layout() {
               src={hyfLogo}
               alt="HackYourFuture logo"
               className="logo"
-              width={200}
+              width={120}
               style={{ padding: "20px" }}
             />
           </a>
@@ -52,7 +53,9 @@ export default function Layout() {
         <Outlet />
       </main>
 
-      <footer>{/* Footer content goes here */}</footer>
+      <footer>
+        <p>2026 © Events Startup Project</p>
+      </footer>
     </div>
   );
 }

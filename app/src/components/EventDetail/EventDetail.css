@@ -1,0 +1,17 @@
+.event-detail {
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+  margin: 40px 200px;
+  gap: var(--gap-l);
+  border: var(--border-standard);
+  border-radius: var(--radius-l);
+}
+
+.event-about {
+  padding-inline: 40px;
+  line-height: 1.3;
+}

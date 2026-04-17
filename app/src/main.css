@@ -6,3 +6,29 @@ body,
   height: 100%;
   width: 100%;
 }
+
+.body {
+  background-image: url("./assets/background-img.avif");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: var(--font-main);
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-container main {
+  flex: 1;
+}
+
+footer {
+  padding: 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+  width: 100%;
+}

@@ -1,0 +1,12 @@
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.event-list {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-inline: 30px;
+  padding: 0;
+}
