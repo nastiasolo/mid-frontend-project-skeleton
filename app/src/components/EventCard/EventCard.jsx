@@ -3,6 +3,7 @@ import "./EventCard.css";
 export default function EventCard({ event }) {
   return (
     <li className="event-card" key={event.id}>
+      <span className="event-category">{event.category}</span>
       <h2 className="event-title">{event.name}</h2>
       <div className="event-description">
         <p>
@@ -13,7 +14,7 @@ export default function EventCard({ event }) {
           <span className="event-emoji">📍 </span>
           {event.venue}, {event.city}
         </p>
-        <p className="event-category">{event.category}</p>
+
         <p>
           <span className="event-emoji">💵 </span>
           {event.price === 0 ? "Free" : `€${event.price}`}
