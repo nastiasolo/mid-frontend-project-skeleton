@@ -1,0 +1,13 @@
+.category-label {
+  color: #fff;
+}
+
+.category-select {
+  background-color: transparent;
+  color: #fff;
+  padding: 4px 8px;
+  border: 1px solid white;
+  border-radius: var(--radius-m);
+  cursor: pointer;
+  outline: none;
+}

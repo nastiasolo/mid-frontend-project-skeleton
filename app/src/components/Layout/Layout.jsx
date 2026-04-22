@@ -28,8 +28,7 @@ export default function Layout() {
               src={hyfLogo}
               alt="HackYourFuture logo"
               className="logo"
-              width={120}
-              style={{ padding: "20px" }}
+              width={70}
             />
           </a>
           {/* Navigation links go here — e.g. link to event list, cart, login */}

@@ -4,7 +4,7 @@
   padding: 12px;
   border: var(--border-standard);
   border-radius: var(--radius-l);
-  flex: 1;
+  flex: 0 1 350px;
   gap: var(--gap-m);
   justify-content: space-around;
   transition: scale var(--transition-speed);
