@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body,
 #root {
@@ -24,6 +30,16 @@ body {
   font-family: var(--font-main);
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 .layout-container {
   display: flex;
   flex-direction: column;
@@ -32,6 +48,7 @@ body {
 
 .layout-container main {
   flex: 1;
+  margin-top: 70px;
 }
 
 footer {

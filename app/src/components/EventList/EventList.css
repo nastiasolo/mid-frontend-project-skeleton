@@ -9,11 +9,15 @@ p {
   flex-wrap: wrap;
   margin: 10px auto;
   padding: 0;
-  max-width: 1200px;
-  justify-content: flex-start;
+  max-width: 1150px;
+  justify-content: space-between;
 }
 
 .list-toolbar {
+  position: sticky;
+  top: 68px;
+  z-index: 900;
+  margin-top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;

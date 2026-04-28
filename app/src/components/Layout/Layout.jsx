@@ -1,6 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 import hyfLogo from "../../assets/hyf.svg";
 import { useAuth } from "../../context/AuthContext.jsx";
+import "./Layout.css";
 
 export default function Layout() {
   const { user, logout } = useAuth();
@@ -8,17 +9,7 @@ export default function Layout() {
   return (
     <div className="layout-container">
       <header>
-        <nav
-          style={{
-            backgroundColor: "white",
-            width: "100%",
-            display: "flex",
-            gap: "20px",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "10px 20px",
-          }}
-        >
+        <nav className="navigation">
           <a
             href="https://www.hackyourfuture.dk/"
             target="_blank"
@@ -28,23 +19,28 @@ export default function Layout() {
               src={hyfLogo}
               alt="HackYourFuture logo"
               className="logo"
-              width={70}
+              width={60}
             />
           </a>
-          {/* Navigation links go here — e.g. link to event list, cart, login */}
-          <Link to="/events" className="link">
+          <Link to="/events" className="event-link link">
             Events
           </Link>
 
-          {user && (
+          {user ? (
             <>
               <span>{user.email}</span>
               <button onClick={logout}>Sign out</button>
             </>
+          ) : (
+            <div className="login-container">
+              <Link to="/login" className="link">
+                Login
+              </Link>
+              <Link to="/register" className="link">
+                Register
+              </Link>
+            </div>
           )}
-
-          <Link to="/login">Login</Link>
-          <Link to="/register">Register</Link>
         </nav>
       </header>
 

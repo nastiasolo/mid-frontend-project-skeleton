@@ -122,6 +122,10 @@
   gap: var(--gap-s);
 }
 
-.description-text {
+.ticket-stats {
   font-size: 0.85rem;
+}
+
+.description-text {
+  font-size: 0.8rem;
 }
