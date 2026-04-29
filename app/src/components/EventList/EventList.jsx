@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-// import events from "../../data/events.js";
 import EventCard from "../EventCard/EventCard.jsx";
 import "./EventList.css";
-import EventDetail from "../EventDetail/EventDetail.jsx";
+// import EventDetail from "../EventDetail/EventDetail.jsx";
 import CategoryFilter from "../CategoryFilter/CategoryFilter.jsx";
 
 // TODO: replace the mock data import with a fetch call to GET /events
@@ -12,21 +11,28 @@ export default function EventList() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
   useEffect(() => {
     const fetchEvents = async () => {
+      setLoading(true);
+      setError(null);
+
       try {
         const url = `http://localhost:3001/api/events?q=${searchTerm}`;
         const response = await fetch(url);
+
         if (!response.ok) {
-          throw new Error("Failed to fetch events");
+          throw new Error("Failed to fetch events. " + response.status);
         }
         const data = await response.json();
         setEvents(data);
       } catch (error) {
-        console.error("Error loading events:", error);
+        setError(error.message);
       } finally {
         setLoading(false);
       }
@@ -85,41 +91,65 @@ export default function EventList() {
           </div>
         </div>
         <div className="content-area">
-          {events.length === 0 ? (
-            <div className="no-data">
-              <p>No events found for "{searchTerm}".</p>
+          {error && (
+            <div className="error-message">
+              <span className="error-icon">⚠️</span>
+              <p>Oops! Something went wrong: {error}</p>
+              <button
+                onClick={() => window.location.reload()}
+                className="retry-btn"
+              >
+                Try Again
+              </button>
             </div>
-          ) : filteredEvents.length === 0 ? (
-            <div className="no-data">
-              <p>No events found in the "{selectedCategory}" category.</p>
+          )}
+
+          {!error && loading && (
+            <div className="loading-container">
+              <div className="spinner"></div>
+              <p>Fetching events...</p>
             </div>
-          ) : (
+          )}
+
+          {!error && !loading && (
             <>
-              <ul className="event-list">
-                {currentItems.map((event) => (
-                  <EventCard key={event.id} event={event} />
-                ))}
-              </ul>
-              {totalPages > 1 && (
-                <div className="pagination">
-                  <button
-                    className="pagination-btn"
-                    disabled={currentPage === 1}
-                    onClick={() => setCurrentPage(currentPage - 1)}
-                  >
-                    Prev
-                  </button>
-                  <span className="page-info">
-                    {currentPage} / {totalPages}
-                  </span>
-                  <button
-                    className="pagination-btn"
-                    disabled={currentPage === totalPages}
-                    onClick={() => setCurrentPage(currentPage + 1)}
-                  >
-                    Next
-                  </button>
+              {events.length === 0 ? (
+                <div className="no-data">
+                  <p>No events found for "{searchTerm}".</p>
                 </div>
+              ) : filteredEvents.length === 0 ? (
+                <div className="no-data">
+                  <p>No events found in the "{selectedCategory}" category.</p>
+                </div>
+              ) : (
+                <>
+                  <ul className="event-list">
+                    {currentItems.map((event) => (
+                      <EventCard key={event.id} event={event} />
+                    ))}
+                  </ul>
+                  {totalPages > 1 && (
+                    <div className="pagination">
+                      <button
+                        className="pagination-btn"
+                        disabled={currentPage === 1}
+                        onClick={() => setCurrentPage(currentPage - 1)}
+                      >
+                        Prev
+                      </button>
+                      <span className="page-info">
+                        {currentPage} / {totalPages}
+                      </span>
+                      <button
+                        className="pagination-btn"
+                        disabled={currentPage === totalPages}
+                        onClick={() => setCurrentPage(currentPage + 1)}
+                      >
+                        Next
+                      </button>
+                    </div>
+                  )}
+                </>
               )}
             </>
           )}
