@@ -37,6 +37,8 @@ export default function Login() {
       <form onSubmit={handleSubmit} className="login-form">
         <input
           type="email"
+          name="email"
+          autocomplete="email"
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -47,6 +49,8 @@ export default function Login() {
 
         <input
           type="password"
+          name="password"
+          autocomplete="current-password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}

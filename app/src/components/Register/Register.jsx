@@ -51,6 +51,8 @@ export default function Register() {
       <form onSubmit={handleSubmit} className="register-form">
         <input
           type="email"
+          name="email"
+          autocomplete="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -61,6 +63,8 @@ export default function Register() {
         {emailError && <span className="validation-text">{emailError}</span>}
         <input
           type="password"
+          name="password"
+          autocomplete="new-password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
