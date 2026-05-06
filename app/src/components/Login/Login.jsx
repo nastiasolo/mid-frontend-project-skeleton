@@ -7,6 +7,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
+    setIsSubmitting(true);
 
     try {
       await login(email, password);
@@ -21,6 +23,7 @@ export default function Login() {
       navigate("/events");
     } catch (err) {
       setError(err.message);
+      setIsSubmitting(false);
     }
   };
 
@@ -39,6 +42,7 @@ export default function Login() {
           onChange={(e) => setEmail(e.target.value)}
           required
           className="login-input"
+          disabled={isSubmitting}
         />
 
         <input
@@ -48,9 +52,14 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
           required
           className="login-input"
+          disabled={isSubmitting}
         />
 
-        <button type="submit" className="login-submit-btn">
+        <button
+          type="submit"
+          className="login-submit-btn"
+          disabled={isSubmitting}
+        >
           Login
         </button>
       </form>
