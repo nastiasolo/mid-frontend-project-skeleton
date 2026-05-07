@@ -1,4 +1,5 @@
-.cart-page {
+.cart-page,
+.cart-empty-container {
   background-color: var(--color-bg);
   display: flex;
   justify-content: center;
@@ -46,6 +47,21 @@
 
 .styled-btn:not(:disabled):hover {
   background-color: var(--color-accent-hover);
+}
+
+.back-to-events-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-accent);
+  padding: 12px 24px;
+  border: var(--border-standard);
+  border-radius: var(--radius-m);
+  transition: all var(--transition-speed);
+}
+
+.back-to-events-btn:not(:disabled):hover {
+  background-color: var(--color-accent-hover);
+  scale: 1.05;
 }
 
 .cart-summary {

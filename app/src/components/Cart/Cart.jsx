@@ -1,4 +1,6 @@
 import { useCart } from "../../context/CartContext.jsx";
+import { Link } from "react-router-dom";
+import cartIcon from "../../assets/shopping-bag.png";
 import "./Cart.css";
 
 export default function Cart() {
@@ -6,7 +8,16 @@ export default function Cart() {
     useCart();
 
   if (cartItems.length === 0) {
-    return <div className="cart-empty">Your cart is empty 🛒</div>;
+    return (
+      <div className="cart-empty-container">
+        <img src={cartIcon} alt="shopping cart" className="cart-icon" />
+        <h2>Your cart is empty</h2>
+        <p>Looks like you haven't added any tickets yet.</p>
+        <Link to="/events" className="back-to-events-btn">
+          Explore Events
+        </Link>
+      </div>
+    );
   }
 
   return (
