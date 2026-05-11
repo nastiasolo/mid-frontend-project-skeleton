@@ -175,6 +175,80 @@
       "date": "2026-05-11T07:27:17.208Z",
       "status": "completed",
       "id": 1
+    },
+    {
+      "userId": 1,
+      "items": [
+        {
+          "id": 2,
+          "name": "Hackathon: Build with AI",
+          "date": "2026-04-25",
+          "time": "09:00",
+          "venue": "BLOX",
+          "city": "Copenhagen",
+          "description": "A 24-hour hackathon where teams of 2–4 build something real using AI APIs. Cash prizes, free food, and mentoring from engineers at leading AI companies. All skill levels welcome.",
+          "price": 0,
+          "ticketsAvailable": 60,
+          "totalTickets": 150,
+          "category": "Hackathon",
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "name": "JavaScript: Modern Patterns Workshop",
+          "date": "2026-05-03",
+          "time": "10:00",
+          "venue": "Founders House",
+          "city": "Copenhagen",
+          "description": "A hands-on full-day workshop covering modern JavaScript patterns: closures, async/await, Promises, modules, and functional techniques. Bring your laptop. Small group, individual coaching included.",
+          "price": 79,
+          "ticketsAvailable": 12,
+          "totalTickets": 30,
+          "category": "Workshop",
+          "quantity": 1
+        }
+      ],
+      "total": 79,
+      "date": "2026-05-11T10:59:30.115Z",
+      "status": "completed",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "items": [
+        {
+          "id": 5,
+          "name": "Copenhagen JS Meetup",
+          "date": "2026-05-20",
+          "time": "18:30",
+          "venue": "Novo Nordisk Digital Hub",
+          "city": "Copenhagen",
+          "description": "Monthly JavaScript community meetup. Two talks from local developers, followed by drinks and networking. This month: state management in 2026 and a live coding session on Vite plugins.",
+          "price": 0,
+          "ticketsAvailable": 85,
+          "totalTickets": 120,
+          "category": "Meetup",
+          "quantity": 1
+        },
+        {
+          "id": 4,
+          "name": "TypeScript Deep Dive",
+          "date": "2026-05-10",
+          "time": "10:00",
+          "venue": "IDA Conference Centre",
+          "city": "Copenhagen",
+          "description": "Go beyond the basics. This workshop covers generics, conditional types, utility types, declaration merging, and integrating TypeScript into large codebases. Prior TypeScript experience required.",
+          "price": 89,
+          "ticketsAvailable": 18,
+          "totalTickets": 25,
+          "category": "Workshop",
+          "quantity": 1
+        }
+      ],
+      "total": 89,
+      "date": "2026-05-11T11:02:35.733Z",
+      "status": "completed",
+      "id": 3
     }
   ]
 }

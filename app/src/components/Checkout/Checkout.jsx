@@ -29,7 +29,7 @@ export default function Checkout() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`, // Важнейшая часть!
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(orderData),
       });
@@ -39,7 +39,7 @@ export default function Checkout() {
       setOrderSuccess(true);
       clearCart();
 
-      setTimeout(() => navigate("/orders"), 3000);
+      setTimeout(() => navigate("/cart"), 3000);
     } catch (err) {
       alert(err.message);
     } finally {

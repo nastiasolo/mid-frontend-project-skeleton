@@ -22,6 +22,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-s);
+  width: 60%;
 }
 
 .cart-item {
@@ -61,7 +62,6 @@
 }
 
 .back-to-events-btn:not(:disabled):hover {
-  background-color: var(--color-accent-hover);
   scale: 1.05;
 }
 
@@ -81,4 +81,22 @@
 .checkout-btn:disabled {
   cursor: not-allowed;
   opacity: 0.7;
+}
+
+.order-history {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-l);
+}
+
+.order-item {
+  border: var(--border-standard);
+  border-radius: var(--radius-m);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
