@@ -24,3 +24,10 @@
 .event-icon {
   width: 70px;
 }
+
+@media (width < 850px) {
+  .home-page {
+    width: 96%;
+    padding: 1rem;
+  }
+}

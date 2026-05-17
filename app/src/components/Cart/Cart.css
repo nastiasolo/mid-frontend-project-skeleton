@@ -104,3 +104,12 @@
 .icon-big {
   width: 60px;
 }
+
+@media (width < 820px) {
+  .cart-page,
+  .cart-empty-container {
+    padding: 20px 10px;
+    margin: 40px auto;
+    width: 96%;
+  }
+}
