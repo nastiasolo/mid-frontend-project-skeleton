@@ -5,7 +5,8 @@
   align-items: center;
   flex-direction: column;
   padding: 40px;
-  margin: 40px 200px;
+  margin: 40px auto;
+  max-width: 800px;
   gap: var(--gap-l);
   border: var(--border-standard);
   border-radius: var(--radius-l);
@@ -14,4 +15,56 @@
 .event-about {
   padding-inline: 40px;
   line-height: 1.3;
+}
+
+.purchase-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-m);
+}
+
+.quantity-buttons-container {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-s);
+}
+
+.quantity-btn {
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  background-color: transparent;
+  color: var(--color-accent);
+  border: var(--border-standard);
+  border-radius: var(--radius-m);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+  font-weight: var(--font-weight-bold);
+}
+
+.quantity-btn:not(:disabled):hover {
+  background-color: var(--color-accent-hover);
+}
+
+.quantity-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.add-to-cart-btn {
+  padding: 10px;
+  font-size: 16px;
+  background-color: transparent;
+  color: var(--color-accent);
+  border: var(--border-standard);
+  border-radius: var(--radius-m);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+  font-weight: var(--font-weight-bold);
+}
+
+.add-to-cart-btn:not(:disabled):hover {
+  background-color: var(--color-accent-hover);
 }

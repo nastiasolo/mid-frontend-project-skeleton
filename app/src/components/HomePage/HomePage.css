@@ -1,0 +1,33 @@
+.home-page {
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 800px;
+  gap: var(--gap-l);
+  border: var(--border-standard);
+  border-radius: var(--radius-l);
+}
+
+.home-title {
+  color: var(--color-accent);
+}
+
+.home-description {
+  width: 80%;
+  line-height: 1.4;
+}
+
+.event-icon {
+  width: 70px;
+}
+
+@media (width < 850px) {
+  .home-page {
+    width: 96%;
+    padding: 1rem;
+  }
+}

@@ -62,3 +62,9 @@
   font-size: 0.8rem;
   text-align: left;
 }
+
+@media (width < 540px) {
+  .register-container {
+    width: 96%;
+  }
+}

@@ -1,9 +1,15 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./EventCard.css";
 
 export default function EventCard({ event }) {
   const [activeTab, setActiveTab] = useState("info");
   const isSoldOut = event.ticketsAvailable === 0;
+  const navigate = useNavigate();
+
+  const handleGoToDetails = () => {
+    navigate(`/events/${event.id}`);
+  };
 
   return (
     <li className="event-card" key={event.id}>
@@ -78,7 +84,12 @@ export default function EventCard({ event }) {
         )}
       </div>
 
-      <button className="event-buy-button" type="button" disabled={isSoldOut}>
+      <button
+        className="event-buy-button"
+        type="button"
+        disabled={isSoldOut}
+        onClick={handleGoToDetails}
+      >
         {isSoldOut ? "Not available" : "Get ticket"}
       </button>
     </li>
