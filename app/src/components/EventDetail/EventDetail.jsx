@@ -27,8 +27,22 @@ export default function EventDetail() {
     fetchEvent();
   }, [id]);
 
-  if (loading) return <p>Loading event details...</p>;
-  if (!event) return <p>Event not found.</p>;
+  if (loading) {
+    return (
+      <div className="loading-container">
+        <div className="spinner"></div>
+        <p>Loading event details...</p>
+      </div>
+    );
+  }
+
+  if (!event) {
+    return (
+      <div className="no-data">
+        <p>Event not found.</p>
+      </div>
+    );
+  }
 
   const handleAddToCart = () => {
     addToCart(event, quantity);
